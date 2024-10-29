@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Style+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Bunga depan -->
+    <img src="kananAtas.png" class="flower top-right pulse" alt="Top Right Flower">
+    <img src="kiriBawah.png" class="flower bottom-left pulse" alt="Bottom Left Flower">
+
+    <!-- Bunga belakang -->
+    <img src="kananAtas.png" class="flower back-right pulse" alt="Top Right Flower">
+    <img src="kiriBawah.png" class="flower back-left pulse" alt="Bottom Left Flower">
+
+    <!-- Cover -->
+    <div class="frame cover" id="cover">
+        <div class="content fade-in">
+            <p class="wedding-of">The Wedding of</p>
+            <h1>Zhapran</h1>
+            <p class="and">&</p>
+            <h1>Fira</h1>
+            <p class="yth">Kepada Yth.</p>
+            <p id="guest-name"></p>
+            <button id="openInvitationBtn">Open Invitation</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navigation" style="display: none;">
+        <ul>
+            <li><a href="section1" data-section="section1"><i class="fas fa-home"></i></a></li>
+            <li><a href="section2" data-section="section2"><i class="fas fa-user"></i></a></li>
+            <li><a href="section3" data-section="section3"><i class="fas fa-calendar"></i></a></li>
+            <li><a href="section4" data-section="section4"><i class="fas fa-paper-plane"></i></a></li>
+            <li><a href="section5" data-section="section5"><i class="fas fa-inbox"></i></a></li>
+            <li><a href="section6" data-section="section6"><i class="fas fa-image"></i></a></li>
+            <li><a href="section7" data-section="section7"><i class="fas fa-gift"></i></a></li>
+        </ul>
+    </nav>
+
+    <div id="playPauseButton" class="play-pause" style="display: none;">
+        <i id="playPauseIcon" class="fas fa-pause"></i>
+        <audio id="weddingMusic" src="Beautiful In White.mp3"></audio>
+    </div>    
+
+    <!-- Section 1: Opening -->
+    <div class="frame content-section" id="section1" style="display: none;">
+        <div class="content bismillah fade-in">
+            <img src="bismillah.png" alt="Bismillah Kaligrafi">
+            <div class="content quran-verse">
+                <h2>وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ</h2>
+                <p>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri agar kamu merasa tentram kepadanya. Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir." (QS. Ar-Rum: 21)</p>
+            </div>
+            <div id="countdown">
+                <div class="time-box"><span id="days">00</span><span>Hari</span></div>
+                <div class="time-box"><span id="hours">00</span><span>Jam</span></div>
+                <div class="time-box"><span id="minutes">00</span><span>Menit</span></div>
+                <div class="time-box"><span id="seconds">00</span><span>Detik</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Profile -->
+    <div class="frame content-section" id="section2" style="display: none;">
+        <div class="content profile-section fade-in">
+            <h1>Profile</h1>
+            <!-- Groom -->
+            <div class="profile groom">
+                <img src="husband.jpeg" alt="Foto Pengantin Pria" class="profile-photo">
+                <div class="profile-info">
+                    <div class="profile-name">
+                        <h2>Groom's Name</h2>
+                        <a href="https://instagram.com/grooms_instagram" target="_blank" class="instagram-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p>Son of Mr. Father's Name and Mrs. Mother's Name</p>
+                </div>
+            </div>
+            <!-- Bride -->
+            <div class="profile bride">
+                <img src="wife.jpeg" alt="Foto Pengantin Wanita" class="profile-photo fade-in">
+                <div class="profile-info">
+                    <div class="profile-name">
+                        <h2 class="fade-in">Bride's Name</h2>
+                        <a href="https://instagram.com/brides_instagram" target="_blank" class="instagram-link fade-in"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="fade-in">Daughter of Mr. Father's Name and Mrs. Mother's Name</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Wedding Details -->
+    <div class="frame content-section" id="section3" style="display: none;">
+        <div class="content fade-in">
+            <h1>Wedding Details</h1>
+            <div class="wedding-event">
+                <h2>Akad</h2>
+                <div class="wedding-details">
+                    <div class="wedding-date">
+                        <p class="day">Sabtu</p>
+                        <p class="date">12</p>
+                        <p class="month-year">Nov 2024</p>
+                    </div>
+                    <div class="location-map">
+                        <p>Masjid Al-Ikhlas, Jakarta</p>
+                        <a href="https://maps.google.com/?q=Masjid+Al-Ikhlas+Jakarta" target="_blank" class="map-button"><i class="fas fa-map-marker-alt"></i> Map</a>
+                    </div>
+                </div>
+            </div>
+            <div class="wedding-event">
+                <h2>Resepsi</h2>
+                <div class="wedding-details">
+                    <div class="wedding-date">
+                        <p class="day">Minggu</p>
+                        <p class="date">13</p>
+                        <p class="month-year">Nov 2024</p>
+                    </div>
+                    <div class="location-map">
+                        <p>Gedung Serbaguna, Jakarta</p>
+                        <a href="https://maps.google.com/?q=Gedung+Serbaguna+Jakarta" target="_blank" class="map-button"><i class="fas fa-map-marker-alt"></i> Map</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4: RSVP Form -->
+    <div class="frame content-section" id="section4" style="display: none;">
+        <div class="content fade-in">
+            <h1>Messages</h1>
+            <form id="rsvpForm">
+                <div class="form-group"><input type="text" id="guestNameRSVP" placeholder="Your Name" required></div>
+                <div class="form-group"><textarea id="guestMessage" placeholder="Your Message" required></textarea></div>
+                <div class="form-group">
+                    <label for="attendance">Will you attend?</label>
+                    <select id="attendance" required>
+                        <option value="">Select an option</option>
+                        <option value="attending">Attending</option>
+                        <option value="not-attending">Not Attending</option>
+                        <option value="unsure">Unsure</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Section 5: Message List -->
+    <div class="frame content-section" id="section5" style="display: none;">
+        <div class="content fade-in">
+            <h1>Messages List</h1>
+            <div id="messageList"></div>
+        </div>
+    </div>
+
+    <!-- Section 6: Gallery -->
+    <div class="frame content-section" id="section6" style="display: none">
+        <div class="content fade-in">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item" data-src="image1.jpeg"><img src="image1.jpeg" alt="Image 1"></div>
+                <div class="gallery-item" data-src="image2.jpeg"><img src="image2.jpeg" alt="Image 2"></div>
+                <div class="gallery-item" data-src="image3.jpeg"><img src="image3.jpeg" alt="Image 3"></div>
+                <div class="gallery-item" data-src="image4.jpeg"><img src="image4.jpeg" alt="Image 4"></div>
+                <div class="gallery-item" data-src="image5.jpeg"><img src="image5.jpeg" alt="Image 5"></div>
+                <!-- Tambahkan gambar lainnya dengan pola yang sama -->
+            </div>
+    
+            <!-- Popup for large images -->
+            <div class="lightbox" style="display: none;">
+                <span class="close">&times;</span>
+                <img class="lightbox-image" src="" alt="Large Image">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </div>  
+    
+    <!-- Section 7: Thanks & Gift -->
+    <div class="frame content-section" id="section7" style="display: none;">
+        <div class="content fade-in">
+            <h2>Zhapran & Fira</h2>
+            <p>Merupakan suatu kebahagiaan dan kehormataan bagi kami apabila Bapak/ibu/Saudara/I berkenan hadir untuk memberikan do'a restu kepada kedua mempelai</p>
+            <div class="bank-gallery">
+                <!-- Item bank -->
+                <div class="bank-item" onclick="openBankModal('BCA', '1234567890')">
+                    <img src="bca.png" alt="Bank BCA">
+                    <p>BCA</p>
+                </div>
+                <div class="bank-item" onclick="openBankModal('Mandiri', '9876543210')">
+                    <img src="mandiri.png" alt="Bank Mandiri">
+                    <p>Mandiri</p>
+                </div>
+                <!-- Tambahkan bank lainnya dengan struktur yang sama -->
+            </div>
+        </div>
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+      <div class="logo">
+        <img src="nc logo.png" alt="Logo" />
+      </div>
+      <div class="social-media">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/your-number" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.yourwebsite.com" target="_blank" class="social-icon"><i class="fas fa-globe"></i></a>
+      </div>
+    </div>
+  </footer>
+    </div>
+    
+    <!-- Modal untuk detail nomor rekening -->
+    <div id="bankModal" class="modal">
+        <div class="modal-content">
+            <span class="close-bank" onclick="closeBankModal()">&times;</span>
+            <h3 id="bankName"></h3>
+            <p>Nomor Rekening: <span id="bankAccount"></span></p>
+            <button onclick="copyAccountNumber()">Copy</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
